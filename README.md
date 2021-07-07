@@ -25,7 +25,9 @@ To Install all requied dependencies run this command
     
 ## Documentation
 
-If you need a minimalistic library to utilize GitHub's REST API and GraphQL API which you can extend with plugins as needed, then @octokit/core is a great starting point.
+If you need a minimalistic library to utilize GitHub's REST API and GraphQL 
+API which you can extend with plugins as needed, 
+then @octokit/core is a great starting point.
 If you don't need the Plugin API then using @octokit/request or @octokit/graphql directly is a good alternative.
 
   
