@@ -11,7 +11,7 @@ html
 					th Simple Hashing Algorithm
 				each d in data
 					if d.sha.slice(-1).match(/\d/)
-						tr(style={background: 'yellow'})
+						tr(style={background: "#FFFF00"})
 							td= d.author.login 
 							td= d.commit.message
 							td= d.sha
