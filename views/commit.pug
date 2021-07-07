@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		title = "ekamtek"
+		link(rel='stylesheet', href='/stylesheets/main.css', type='text/css')
+	body
+			table
+				tr
+					th Creater
+					th Commit
+					th Simple Hashing Algorithm
+				each d in data
+					if d.sha.slice(-1).match(/\d/)
+						tr(style={background: 'yellow'})
+							td= d.author.login 
+							td= d.commit.message
+							td= d.sha
+					else 
+						tr
+							td= d.author.login
+							td= d.commit.message
+							td= d.sha
