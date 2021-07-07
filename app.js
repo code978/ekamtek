@@ -21,13 +21,11 @@ app.get('/', (req, res) => {
 
 app.get('/commits', async (req, res) => {
 
-	const commits = await octokit.request(
+	const commit = await octokit.request(
 		`GET /repos/{owner}/{repo}/commits`, { owner, repo }
 	);
 
-	console.log(commits)
-
-	res.render('commit', { data: commits.data });
+	res.render('commit', { data: commit.data });
 });
 
 app.listen(port, () => console.log(`Express started on http://localhost:${port}\n Press Ctrl-C to terminate.`));
