@@ -1,31 +1,14 @@
 const express = require("express");
-const { Octokit } = require("@octokit/core");
-const path = require('path');
-
 const app = express();
-
+const path = require('path');
 const port = process.env.PORT || 3000;
-
-const octokit = new Octokit();
-
-const owner = "code978";
-const repo = "ekamtek";
+const routes = require('./routes');
 
 app.use(express.static(path.join(__dirname, '/public')));
 app.set('view engine', 'pug');
 app.set('views', './views');
 
-app.get('/', (req, res) => {
-	res.render('main');
-});
+// for routes
+app.use("/", routes);
 
-app.get('/commits', async (req, res) => {
-
-	const commit = await octokit.request(
-		`GET /repos/{owner}/{repo}/commits`, { owner, repo }
-	);
-
-	res.render('commit', { data: commit.data });
-});
-
-app.listen(port, () => console.log(`Express started on http://localhost:${port}\n Press Ctrl-C to terminate.`));
+app.listen(port, () => console.log(`Express started on http://localhost:${port}`));
