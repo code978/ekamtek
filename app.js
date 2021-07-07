@@ -30,4 +30,4 @@ app.get('/commits', async (req, res) => {
 	res.render('commit', { data: commits.data });
 });
 
-app.listen(port, () => console.log(`Express started on http://localhost:${port}\nPress Ctrl-C to terminate.`));
+app.listen(port, () => console.log(`Express started on http://localhost:${port}\n Press Ctrl-C to terminate.`));
